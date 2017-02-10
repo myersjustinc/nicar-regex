@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+header,
+main,
+aside,
+nav,
+footer {
+  flex-grow: 1;
+}
+
+header,
+footer {
+  flex-basis: 100%;
+}
+
+footer {
+  order: 1000;
+}
+
+/* Medium screens */
+@media all and (max-width: 799px) {
+  nav {
+    flex-basis: 100%;
+    order: 1;
+  }
+  .bodies {
+    order: 2;
+  }
+  main {
+    flex-grow: 3;
+    order: 3;
+  }
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+  .bodies {
+    order: 1;
+  }
+  main {
+    flex-grow: 3;
+    order: 2;
+  }
+  nav {
+    order: 3;
+  }
+}
