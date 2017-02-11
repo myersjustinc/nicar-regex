@@ -1,9 +1,20 @@
-(function(global, Tester) {
+(function(global, document, BodySwitcher, Tester) {
 'use strict';
 
-var tester;
+var bodiesForm = document.getElementById('bodies'),
+  bodySwitcher,
+  tester,
+  testerForm = document.getElementById('tester');
 
-tester = new Tester(global.document.getElementById('tester'));
+// Wire up the regex experimentation environment.
+tester = new Tester(testerForm);
 
+// Load pieces of sample text and connect them to the environment.
+bodySwitcher = new BodySwitcher(bodiesForm, tester, {
+  'EFF wordlist': 'bodies/eff-wordlist.txt'
+});
+
+// FIXME: Remove these testing variables.
 global.tester = tester;
-}(this, this.Tester));
+global.bodySwitcher = bodySwitcher;
+}(this, this.document, this.BodySwitcher, this.Tester));
