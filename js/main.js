@@ -11,7 +11,8 @@ tester = new Tester(testerForm);
 
 // Load pieces of sample text and connect them to the environment.
 bodySwitcher = new BodySwitcher(bodiesForm, tester, {
-  'EFF wordlist': 'bodies/eff-wordlist.txt'
+  'EFF wordlist': 'bodies/eff-wordlist.txt',
+  'People': 'bodies/people.txt'
 });
 
 // FIXME: Remove these testing variables.

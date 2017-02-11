@@ -1,0 +1,31 @@
+first_name,last_name,phone,city,state
+Emily,Fowler,(323) 230-9835,Burbank,CA
+Andrea,Rivera,404-368-5210,Lawrenceville,GA
+Richard,Hansen,8021292104,Montpelier,VT
+Eugene,Lewis,305-425-8045,Miami,FL
+Roy,Reynolds,(215) 638-2759,Philadelphia,PA
+Carolyn,Long,262-624-6815,Milwaukee,WI
+Beverly,Alvarez,(419) 510-6166,Mansfield,OH
+Sarah,Wheeler,3021383068,Wilmington,DE
+Heather,Burke,4041178096,Atlanta,GA
+Richard,Flores,562-771-4692,Long Beach,CA
+Ryan,Richards,202-451-0991,Washington,DC
+Benjamin,Morrison,(505) 899-2841,Albuquerque,NM
+Louise,Russell,(313) 588-4120,Detroit,MI
+Sara,Jacobs,(757) 477-5226,Norfolk,VA
+Phillip,Nelson,5031905160,Portland,OR
+Evelyn,Garrett,(210) 962-6252,San Antonio,TX
+Jacqueline,Harvey,602-693-3956,Phoenix,AZ
+Jonathan,James,(816) 129-5145,Saint Joseph,MO
+Brenda,Simmons,(814) 403-4416,Erie,PA
+Anne,Mendoza,2023832400,Washington,DC
+Betty,Hudson,805-766-8502,San Luis Obispo,CA
+Ann,Spencer,(770) 545-1800,Atlanta,GA
+Michael,Lee,(706) 476-6343,Augusta,GA
+John,Willis,(901) 951-7414,Memphis,TN
+Elizabeth,Perez,605-439-3545,Sioux Falls,SD
+Joan,Kelley,9715148877,Portland,OR
+Kenneth,Little,(714) 830-6974,Anaheim,CA
+Catherine,Martin,(972) 383-0881,Mesquite,TX
+Harold,Burns,(267) 716-4246,Philadelphia,PA
+Kathleen,Palmer,(918) 503-4216,Tulsa,OK
