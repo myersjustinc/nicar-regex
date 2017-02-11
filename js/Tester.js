@@ -1,4 +1,4 @@
-(function(global) {
+(function(global, CodeMirror) {
 'use strict';
 
 function Tester(testerForm) {
@@ -114,4 +114,4 @@ Tester.prototype.update = function update() {
 };
 
 global.Tester = Tester;
-}(this));
+}(this, this.CodeMirror));
