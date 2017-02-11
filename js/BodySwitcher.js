@@ -50,7 +50,7 @@ BodySwitcher.prototype.removeLoading = function removeLoading() {
   }
 };
 
-BodySwitcher.prototype.renderOption = function renderOption(bodyName, bodyText) {
+BodySwitcher.prototype.renderOption = function renderOption(bodyName) {
   var bodyButton,
     bodyItem;
 
