@@ -5,6 +5,14 @@
   padding-left: 0;
   text-indent: 0;
 }
+  .bodies ul:before {
+    content: 'Search against:';
+    margin-right: 1em;
+  }
+  .bodies li {
+    display: inline-block;
+    margin-right: 2rem;
+  }
 
 .bodies button {
   background-color: transparent;
@@ -12,6 +20,7 @@
   color: #ffd966;
   font-family: 'Nixie One', sans-serif;
   font-size: 1rem;
+  padding: 0;
 }
   .bodies button:hover {
     cursor: pointer;

@@ -3,8 +3,8 @@
 
 function Tester(testerForm) {
   testerForm.innerHTML = [
-    '<label>Pattern: <input type="text" class="pattern"></label>',
     '<p class="error"></p>',
+    '<label>Pattern: <input type="text" class="pattern"></label>',
     '<textarea class="corpus"></textarea>'
   ].join('\n');
 

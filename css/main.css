@@ -20,18 +20,20 @@ nav li {
   text-indent: 0;
 }
 nav ul {
-  margin-bottom: 3rem;
+  border-bottom: 1px dotted #fff;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
 }
+  nav ul:before {
+    content: 'Useful links:';
+    margin-right: 0.5em;
+  }
   nav li {
     display: inline-block;
     margin-right: 2rem;
   }
 
-main {
-  float: right;
-  width: 75%;
-}
-
 footer {
-  clear: both;
+  margin-top: 1.5rem;
+  text-align: center;
 }
