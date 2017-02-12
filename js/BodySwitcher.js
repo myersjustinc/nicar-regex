@@ -11,7 +11,6 @@ function BodySwitcher(bodiesElem, tester, bodyPaths) {
   this.bodyContents = {};
 
   this.bodiesList = bodiesElem.querySelector('ul');
-  this.loadingMessage = bodiesElem.querySelector('.loading');
   this.tester = tester;
 
   this.bindEvents();
@@ -35,7 +34,7 @@ BodySwitcher.prototype.downloadBody = function downloadBody(bodyName, bodyURL) {
 
   function receiveBody() {
     this.bodyContents[bodyName] = req.responseText;
-    this.renderOption(bodyName);
+    this.renderOptions();
   }
 
   req.addEventListener('load', receiveBody.bind(this));
@@ -43,28 +42,23 @@ BodySwitcher.prototype.downloadBody = function downloadBody(bodyName, bodyURL) {
   req.send();
 };
 
-BodySwitcher.prototype.removeLoading = function removeLoading() {
-  if (this.loadingMessage != null) {
-    this.loadingMessage.parentNode.removeChild(this.loadingMessage);
-    this.loadingMessage = null;
-  }
-};
+BodySwitcher.prototype.renderOptions = function renderOptions() {
+  var outputFragment = document.createDocumentFragment();
 
-BodySwitcher.prototype.renderOption = function renderOption(bodyName) {
-  var bodyButton,
-    bodyItem;
+  Object.keys(this.bodyContents).sort().forEach(function(bodyName) {
+    var bodyButton = document.createElement('button'),
+      bodyItem = document.createElement('li');
 
-  this.removeLoading();
+    bodyButton.type = 'button';
+    bodyButton.textContent = bodyName;
+    bodyButton._bodyName = bodyName;
 
-  bodyItem = document.createElement('li');
+    bodyItem.appendChild(bodyButton);
+    outputFragment.appendChild(bodyItem);
+  }, this);
 
-  bodyButton = document.createElement('button');
-  bodyButton.type = 'button';
-  bodyButton.textContent = bodyName;
-  bodyButton._bodyName = bodyName;
-
-  bodyItem.appendChild(bodyButton);
-  this.bodiesList.appendChild(bodyItem);
+  this.bodiesList.innerHTML = '';
+  this.bodiesList.appendChild(outputFragment);
 };
 
 BodySwitcher.prototype.selectNewBody = function selectNewBody(ev) {
