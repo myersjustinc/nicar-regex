@@ -105,6 +105,7 @@ Tester.prototype.update = function update() {
   var matches;
 
   if (this.patternField.value === '') {
+    this.clearError();
     this.clearMatches();
     return;
   }
