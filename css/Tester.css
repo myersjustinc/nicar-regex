@@ -1,3 +1,19 @@
+.tester {
+  position: relative;
+}
+
+.tester .error-message {
+  background-color: #e58989;
+  padding: 0.5rem;
+  position: absolute;
+  right: 0;
+  top: -3.75rem;
+  visibility: hidden;
+}
+.tester.error .error-message {
+  visibility: visible;
+}
+
 .tester label,
 .tester .pattern {
   font-size: 1.5rem;
@@ -8,8 +24,12 @@
   border-width: 0;
   font-family: 'Source Code Pro', monospace;
   float: right;
+  transition: background-color 0.2s;
   width: 80%;
   width: calc(100% - 5em);
+}
+.tester.error .pattern {
+  background-color: #e58989;
 }
 
 .tester .CodeMirror {

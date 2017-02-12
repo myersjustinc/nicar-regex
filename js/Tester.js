@@ -3,16 +3,19 @@
 
 function Tester(testerForm) {
   testerForm.innerHTML = [
-    '<p class="error"></p>',
+    '<p class="error-message"></p>',
     '<label>Pattern: <input type="text" class="pattern"></label>',
     '<textarea class="corpus"></textarea>'
   ].join('\n');
 
   this.corpusField = testerForm.querySelector('.corpus');
   this.editor = CodeMirror.fromTextArea(this.corpusField);
-  this.errorField = testerForm.querySelector('.error');
+  this.errorField = testerForm.querySelector('.error-message');
   this.patternField = testerForm.querySelector('.pattern');
+  this.testerForm = testerForm;
+
   this.bindEvents();
+  this.clearError();
 };
 
 Tester.prototype.bindEvents = function bindEvents() {
@@ -26,7 +29,7 @@ Tester.prototype.bindEvents = function bindEvents() {
 
 Tester.prototype.clearError = function clearErrors() {
   this.errorField.textContent = '';
-  this.errorField.style.visibility = 'hidden';
+  this.testerForm.classList.remove('error');
 };
 
 Tester.prototype.clearMatches = function clearMatches() {
@@ -37,7 +40,7 @@ Tester.prototype.clearMatches = function clearMatches() {
 
 Tester.prototype.error = function error(message) {
   this.errorField.textContent = message;
-  this.errorField.style.visibility = 'visible';
+  this.testerForm.classList.add('error');
 };
 
 Tester.prototype.findMatches = function findMatches() {
