@@ -1,3 +1,17 @@
+body {
+  background-color: #48c;
+  color: #fff;
+  font-family: 'Nixie One', sans-serif;
+}
+
+a {
+  color: #ffd966;
+  text-decoration: none;
+}
+  a:hover {
+    text-decoration: underline;
+  }
+
 nav ul,
 nav li {
   list-style-type: none;
@@ -5,8 +19,12 @@ nav li {
   padding-left: 0;
   text-indent: 0;
 }
+nav ul {
+  margin-bottom: 3rem;
+}
   nav li {
     display: inline-block;
+    margin-right: 2rem;
   }
 
 main {

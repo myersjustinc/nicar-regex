@@ -1,0 +1,19 @@
+.bodies ul,
+.bodies li {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  text-indent: 0;
+}
+
+.bodies button {
+  background-color: transparent;
+  border: 0;
+  color: #ffd966;
+  font-family: 'Nixie One', sans-serif;
+  font-size: 1rem;
+}
+  .bodies button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
