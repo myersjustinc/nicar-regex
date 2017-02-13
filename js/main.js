@@ -11,6 +11,7 @@ tester = new Tester(testerForm);
 
 // Load pieces of sample text and connect them to the environment.
 bodySwitcher = new BodySwitcher(bodiesForm, tester, {
+  'College URLs': 'bodies/college-urls.txt',
   'EFF wordlist': 'bodies/eff-wordlist.txt',
   'People': 'bodies/people.txt'
 });
