@@ -27,6 +27,19 @@ Tester.prototype.bindEvents = function bindEvents() {
   this.patternField.addEventListener('keyup', update);
 };
 
+Tester.prototype.checkForDanger = function checkForDanger() {
+  var patternString = this.patternField.value;
+
+  if (
+    patternString.length === 2 &&
+    (patternString.endsWith('?') || patternString.endsWith('*'))
+  ) {
+    // Not an exhaustive check on this kind of thing, but hopefully enough to
+    // keep us out of trouble.
+    return 'Literally matches everything';
+  }
+};
+
 Tester.prototype.clearError = function clearErrors() {
   this.errorField.textContent = '';
   this.testerForm.classList.remove('error');
@@ -46,11 +59,18 @@ Tester.prototype.error = function error(message) {
 Tester.prototype.findMatches = function findMatches() {
   // Based on example from https://mzl.la/2jVEJWo
   var allMatches = [],
+    danger,
     fullText = this.editor.getValue(),
     pattern,
     thisMatch;
 
   this.clearError();
+
+  danger = this.checkForDanger();
+  if (danger != null) {
+    this.error(danger);
+    return [];
+  }
 
   try {
     pattern = new RegExp(this.patternField.value, 'g');
