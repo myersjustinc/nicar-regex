@@ -60,7 +60,7 @@ Tester.prototype.findMatches = function findMatches() {
   // Based on example from https://mzl.la/2jVEJWo
   var allMatches = [],
     danger,
-    fullText = this.editor.getValue(),
+    fullText,
     pattern,
     thisMatch;
 
@@ -80,6 +80,7 @@ Tester.prototype.findMatches = function findMatches() {
     return [];
   }
 
+  fullText = this.editor.getValue();
   while ((thisMatch = pattern.exec(fullText)) != null) {
     allMatches.push({
       match: thisMatch[0],
