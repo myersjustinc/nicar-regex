@@ -38,6 +38,11 @@ Tester.prototype.checkForDanger = function checkForDanger() {
     // keep us out of trouble.
     return 'Literally matches everything';
   }
+
+  if (patternString.endsWith('|') && !patternString.endsWith('\\|')) {
+    // In the style of "Unterminated group"
+    return 'Unterminated pipe';
+  }
 };
 
 Tester.prototype.clearError = function clearErrors() {
