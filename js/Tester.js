@@ -27,24 +27,6 @@ Tester.prototype.bindEvents = function bindEvents() {
   this.patternField.addEventListener('keyup', update);
 };
 
-Tester.prototype.checkForDanger = function checkForDanger() {
-  var patternString = this.patternField.value;
-
-  if (
-    patternString.length === 2 &&
-    (patternString.endsWith('?') || patternString.endsWith('*'))
-  ) {
-    // Not an exhaustive check on this kind of thing, but hopefully enough to
-    // keep us out of trouble.
-    return 'Literally matches everything';
-  }
-
-  if (patternString.endsWith('|') && !patternString.endsWith('\\|')) {
-    // In the style of "Unterminated group"
-    return 'Unterminated pipe';
-  }
-};
-
 Tester.prototype.clearError = function clearErrors() {
   this.errorField.textContent = '';
   this.testerForm.classList.remove('error');
@@ -71,12 +53,6 @@ Tester.prototype.findMatches = function findMatches() {
 
   this.clearError();
 
-  danger = this.checkForDanger();
-  if (danger != null) {
-    this.error(danger);
-    return [];
-  }
-
   try {
     pattern = new RegExp(this.patternField.value, 'g');
   }
@@ -87,6 +63,12 @@ Tester.prototype.findMatches = function findMatches() {
 
   fullText = this.editor.getValue();
   while ((thisMatch = pattern.exec(fullText)) != null) {
+    // Break before attempting to work with infinite matches.
+    if (thisMatch[0].length === 0) {
+      this.error('Matches literally everything');
+      return [];
+    }
+
     allMatches.push({
       match: thisMatch[0],
       start: thisMatch.index,
