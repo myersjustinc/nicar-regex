@@ -44,4 +44,5 @@
 
 .tester .match {
   background-color: #ffd966;
+  border: 1px solid #aaa;
 }
