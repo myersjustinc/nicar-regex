@@ -17,12 +17,13 @@
 .bodies button {
   background-color: transparent;
   border: 0;
-  color: #ffd966;
+  color: #fafdc4;
   font-family: 'Source Code Sans', sans-serif;
   font-size: 1rem;
   padding: 0;
+  text-decoration: underline dotted rgba(250, 253, 196, 0.8);
 }
   .bodies button:hover {
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: underline solid rgba(250, 253, 196, 1);
   }
