@@ -12,7 +12,4 @@ tester = new Tester(testerForm);
 // Load pieces of sample text and connect them to the environment.
 bodySwitcher = new BodySwitcher(bodiesForm, tester);
 
-// FIXME: Remove these testing variables.
-global.tester = tester;
-global.bodySwitcher = bodySwitcher;
 }(this, this.document, this.BodySwitcher, this.Tester));
