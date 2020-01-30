@@ -1,1 +1,1 @@
-# Regular expressions hands-on, NICAR 2017 #
+# Regular expressions hands-on #
