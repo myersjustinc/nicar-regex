@@ -1,20 +1,18 @@
 (function(global, document) {
 'use strict';
 
-function BodySwitcher(bodiesElem, tester, bodyPaths) {
+function BodySwitcher(bodiesElem, tester) {
   bodiesElem.innerHTML = [
     '<ul>',
       '<li class="loading">Loading&hellip;</li>',
     '</ul>'
   ].join('\n');
 
-  this.bodyContents = {};
-
   this.bodiesList = bodiesElem.querySelector('ul');
   this.tester = tester;
 
   this.bindEvents();
-  this.downloadBodies(bodyPaths);
+  this.renderOptions();
 }
 
 BodySwitcher.prototype.bindEvents = function bindEvents() {
@@ -23,29 +21,10 @@ BodySwitcher.prototype.bindEvents = function bindEvents() {
   this.bodiesList.addEventListener('click', selectNewBody);
 };
 
-BodySwitcher.prototype.downloadBodies = function downloadBodies(bodyPaths) {
-  Object.keys(bodyPaths).forEach(function(bodyName) {
-    this.downloadBody(bodyName, bodyPaths[bodyName]);
-  }, this);
-};
-
-BodySwitcher.prototype.downloadBody = function downloadBody(bodyName, bodyURL) {
-  var req = new XMLHttpRequest();
-
-  function receiveBody() {
-    this.bodyContents[bodyName] = req.responseText;
-    this.renderOptions();
-  }
-
-  req.addEventListener('load', receiveBody.bind(this));
-  req.open('GET', bodyURL);
-  req.send();
-};
-
 BodySwitcher.prototype.renderOptions = function renderOptions() {
   var outputFragment = document.createDocumentFragment();
 
-  Object.keys(this.bodyContents).sort().forEach(function(bodyName) {
+  Object.keys(global.bodyContents).sort().forEach(function(bodyName) {
     var bodyButton = document.createElement('button'),
       bodyItem = document.createElement('li');
 
@@ -77,7 +56,7 @@ BodySwitcher.prototype.selectNewBody = function selectNewBody(ev) {
 };
 
 BodySwitcher.prototype.setBody = function setBody(bodyName) {
-  var newBody = this.bodyContents[bodyName];
+  var newBody = global.bodyContents[bodyName];
   this.tester.setText(newBody || ('Error loading ' + bodyName));
 };
 

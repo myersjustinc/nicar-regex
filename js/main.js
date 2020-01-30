@@ -10,11 +10,7 @@ var bodiesForm = document.getElementById('bodies'),
 tester = new Tester(testerForm);
 
 // Load pieces of sample text and connect them to the environment.
-bodySwitcher = new BodySwitcher(bodiesForm, tester, {
-  'College URLs': 'bodies/college-urls.txt',
-  'EFF wordlist': 'bodies/eff-wordlist.txt',
-  'People': 'bodies/people.txt'
-});
+bodySwitcher = new BodySwitcher(bodiesForm, tester);
 
 // FIXME: Remove these testing variables.
 global.tester = tester;
