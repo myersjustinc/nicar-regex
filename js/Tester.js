@@ -54,7 +54,7 @@ Tester.prototype.findMatches = function findMatches() {
   this.clearError();
 
   try {
-    pattern = new RegExp(this.patternField.value, 'g');
+    pattern = new RegExp(this.patternField.value, 'gm');
   }
   catch (e) {
     this.error(this.formatRegExpError(e));
