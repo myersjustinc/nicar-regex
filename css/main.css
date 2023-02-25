@@ -1,15 +1,15 @@
 body {
-  background-color: #5272aa;
+  background-color: #314a73;
   color: #fff;
-  font-family: 'Source Code Sans', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 a {
-  color: #fafdc4;
-  text-decoration: underline dotted rgba(250, 253, 196, 0.8);
+  color: #b5f2f9;
+  text-decoration: underline dotted rgba(181, 242, 249, 0.8);
 }
   a:hover {
-    text-decoration: underline solid rgba(250, 253, 196, 1);
+    text-decoration: underline solid rgba(181, 242, 249, 1);
   }
 
 nav ul,

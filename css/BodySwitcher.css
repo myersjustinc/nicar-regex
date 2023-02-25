@@ -17,11 +17,11 @@
 .bodies button {
   background-color: transparent;
   border: 0;
-  color: #fafdc4;
-  font-family: 'Source Code Sans', sans-serif;
+  color: #b5f2f9;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 1rem;
   padding: 0;
-  text-decoration: underline dotted rgba(250, 253, 196, 0.8);
+  text-decoration: underline dotted rgba(181, 242, 249, 0.8);
 }
   .bodies button:hover {
     cursor: pointer;
